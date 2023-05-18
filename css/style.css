@@ -13,6 +13,7 @@
 body {
 	color: var(--activeText);
 	background-color: black;
+	user-select: none;
 }
 
 
@@ -112,4 +113,72 @@ main {
 
 .content1__line.very-small {
 	font-size: 16px;
+}
+
+.buttonSubscription {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: var(--activeText);
+	font-size: 24px;
+	margin: auto;
+	height: 60px;
+	width: 350px;
+	border-radius: 60px;
+	background: -webkit-linear-gradient(45deg, rgb(201, 128, 10), rgb(163, 36, 0));
+	background: -moz-linear-gradient(45deg, rgb(201, 128, 10), rgb(163, 36, 0));
+	background: linear-gradient(45deg, rgb(201, 128, 10), rgb(163, 36, 0));
+	margin-top: 100px;
+	margin-bottom: 30px;
+	transition: 0.3s;
+}
+
+.buttonSubscription:hover {
+
+	height: calc(60*1.1px);
+	width: calc(350*1.1px);
+	margin-bottom: 24px;
+	transition: 0.3s;
+
+}
+
+.scroll-container {
+	display: flex;
+	overflow-x: scroll;
+	gap: 30px;
+}
+
+
+.scroll-element {
+	width: 200px;
+	height: 300px;
+	flex-shrink: 0;
+
+}
+
+.scroll-element img {
+	width: 100%;
+}
+
+.scroll-container::-webkit-scrollbar {
+	width: 0;
+}
+
+.btn-scroll {
+	font-size: 40px;
+	color: var(--noActiveText);
+}
+
+.btn-scroll:hover {
+	color: var(--activeText);
+}
+
+.scroll-title {
+	padding: 20px 68px;
+}
+
+.scroll-line {
+	display: flex;
+	align-items: center;
+	gap: 50px;
 }
