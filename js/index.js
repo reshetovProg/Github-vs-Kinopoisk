@@ -45,10 +45,33 @@ function foo(data) {
 
 const btn = document.querySelectorAll('.btn-scroll');
 
-btn[0].onclick = () => {
-	scrollContainer.scrollBy({ left: -300, top: 0, behavior: 'smooth' });
+btn.forEach((el) => {
+	el.addEventListener('click', () => {
+		let parent = el.parentElement;
+		console.log(el.textContent)
+		if (el.textContent == '<') {
+			parent.querySelector('.scroll-container').scrollBy({ left: -300, top: 0, behavior: 'smooth' });
+		}
+		else if (el.textContent == '>') {
+			parent.querySelector('.scroll-container').scrollBy({ left: 300, top: 0, behavior: 'smooth' });
+		}
+
+	})
+})
+
+const anchors = document.querySelectorAll('a[href*="#"]');
+for (const anchor of anchors) {
+	anchor.addEventListener('click', (el) => {
+		event.preventDefault();
+		const blockID = anchor.getAttribute('href');
+		document.querySelector('' + blockID).scrollIntoView({
+			behavior: "smooth",
+			block: "nearest"
+		})
+	})
+
 }
-btn[1].onclick = () => {
-	scrollContainer.scrollBy({ left: 300, top: 0, behavior: 'smooth' });
-}
+
+
+
 
