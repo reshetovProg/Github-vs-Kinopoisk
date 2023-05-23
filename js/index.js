@@ -11,8 +11,10 @@ function createScrollElement(cinema) {
 	return scrollElement;
 }
 
+const contentScroll = document.querySelectorAll('.content-scroll');
 
-const scrollContainer = document.querySelector('.scroll-container');
+
+
 
 
 let array = fetch('./json/cinema.json').then(r => r.text()).then(
@@ -24,7 +26,19 @@ let array = fetch('./json/cinema.json').then(r => r.text()).then(
 
 function foo(data) {
 	data.forEach(element => {
-		scrollContainer.appendChild(createScrollElement(element));
+		let scrollTitle;
+		let scrollContainer;
+		contentScroll.forEach((scroll) => {
+			scrollTitle = scroll.querySelector('.scroll-title');
+			scrollContainer = scroll.querySelector('.scroll-container');
+			let createEl = createScrollElement(element);
+			if ((element.category).includes(scrollTitle.textContent)) {
+				scrollContainer.appendChild(createEl);
+			}
+
+
+		})
+
 	});
 
 }
