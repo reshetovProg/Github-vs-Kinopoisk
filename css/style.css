@@ -202,7 +202,7 @@ main {
 	box-shadow: 0px 0px 15px 5px rgb(172, 172, 172);
 	margin-top: -15%;
 	width: 370px;
-	height: 240px;
+	/* height: 240px; */
 	background-color: rgba(96, 96, 96, 0.9);
 	border-radius: 10px;
 	padding: 10px 40px;
@@ -212,13 +212,14 @@ main {
 
 .autorization_text {
 	color: var(--activeText);
-	width: 100px;
-
+	width: 130px;
 
 }
 
 .subtext {
 	color: var(--noActiveText);
+	line-height: 25px;
+	/* padding-top:15px; */
 }
 
 .autorization input {
@@ -233,8 +234,9 @@ main {
 
 .autorization p {
 	display: flex;
-	align-items: center;
+	/* align-items: center; */
 	line-height: 40px;
+	padding-top:10px;
 
 }
 
@@ -247,4 +249,12 @@ main {
 
 .autorization .esc:hover {
 	color: var(--activeText);
+}
+
+.autorization_text:not(.subtext):hover {
+	color: var(--orange)
+}
+
+#registration {
+	display: none;
 }
